@@ -1,2 +1,6 @@
-Model/*
-alphabet_data/*
+Model/keras_model.h5
+alphabet_data/a
+alphabet_data/b
+alphabet_data/c
+alphabet_data/d
+alphabet_data/e
