@@ -60,7 +60,7 @@ while True:
             cv2.putText(img, labels[index], (x, y - 26), cv2.FONT_HERSHEY_COMPLEX, 1.7, (255, 255, 255), 2)
 
             # Save the cropped image to a file.
-            cv2.imwrite(f"{folder}/{counter}.jpg", imgCrop)
+            # cv2.imwrite(f"{folder}/{counter}.jpg", imgCrop)
             counter += 1
 
         # Display the image.

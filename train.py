@@ -96,7 +96,7 @@ model = tf.keras.Sequential([
 
 # configure the learning process
 model.compile(loss='sparse_categorical_crossentropy',
-              # use sparse cross entropy since your data is integer encoded, NOT hot-encoded (0s and 1s)
+              # use sparse cross entropy since your data is integer encoded, Npy hot-encoded (0s and 1s)
               optimizer='adam',
               metrics=['accuracy']),
 # print(tf.config.list_physical_devices('GPU'))
