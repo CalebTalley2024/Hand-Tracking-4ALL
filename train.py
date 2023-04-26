@@ -78,7 +78,7 @@ x_train, x_valid, y_train, y_valid = train_test_split(x_train, y_train, test_siz
 # plt.imshow(one_image)
 
 # %%
-model = tf.keras.Sequential([
+model_basic = tf.keras.Sequential([
     tf.keras.layers.Conv2D(filters=64, kernel_size=2, padding='same', activation='relu', input_shape=(224, 224,3)),
     tf.keras.layers.MaxPooling2D(pool_size=2),
     tf.keras.layers.Dropout(0.3),
@@ -90,6 +90,22 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(10, activation='softmax')
 ])
+
+# model used for training
+# layers: Convolution, Batch Normalization, MaxPool, Dense (Fully Connected Layer)
+model = tf.keras.Sequential([
+    tf.keras.layers.Conv2D(filters=32, kernel_size=3, padding='same', activation='relu', input_shape=(224, 224, 3)),
+    tf.keras.layers.MaxPooling2D(pool_size=2),
+    tf.keras.layers.Dropout(0.3),
+    tf.keras.layers.Conv2D(filters=64, kernel_size=3, padding='same', activation='relu'),
+    tf.keras.layers.MaxPooling2D(pool_size=2),
+    tf.keras.layers.Dropout(0.3),
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dropout(0.5),
+    tf.keras.layers.Dense(10, activation='softmax')
+])
+
 # type(model)
 
 # %%
@@ -124,7 +140,7 @@ def fit_model():
     model.fit(x_train,
               y_train,
               batch_size=50,
-              epochs=10,
+              epochs=5,
               validation_data=(x_valid, y_valid), verbose=1,
               callbacks=None)
 # test the accuracy of model with testing ste

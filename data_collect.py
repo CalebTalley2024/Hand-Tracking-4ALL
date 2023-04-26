@@ -5,7 +5,6 @@ import math
 import time
 
 
-
 # takes a picture and places it into folder
 def take_picture(key, counter, folder):
     
@@ -107,5 +106,3 @@ while True:
     key, counter, folder = take_picture(key, counter,folder)
         
 # click 1,2,3,4, or 5 to get to the a,b,c,d, or e folders respectively
-
-
